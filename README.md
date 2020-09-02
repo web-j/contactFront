@@ -1,4 +1,4 @@
-# Desafio Hummer (Frontend)
+# Gerenciamento de Contatos (Frontend)
 
 ## Instalação e configurações
 
@@ -24,7 +24,7 @@ ng serve
 ```
 * No projeto há um arquivo chamado "constant-rest" na pasta "constant" em que há uma constante com o endereço do servidor backend:
 ```bash
-export const APP_URL = 'http://localhost:5000/';
+export const APP_URL = 'http://localhost:8080/';
 ```
 
 ## License
