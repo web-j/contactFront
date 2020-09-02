@@ -1,0 +1,37 @@
+<mat-card class="row mat-elevation-z0 card" *ngIf="obj">
+    <mat-card-header class="col-xs-12 col-sm-12 col-md-12 col-lg-12 center-xs">
+        <mat-card-title *ngIf="edit"> Atualização de Contato </mat-card-title>
+        <mat-card-title *ngIf="!edit"> Novo do Contato </mat-card-title>
+        <mat-card-subtitle>Informe os dados do contato ou atualize-os</mat-card-subtitle>
+    </mat-card-header>
+
+    <form #form="ngForm">
+        <mat-card-content>
+            <div class="row">
+                <mat-form-field class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <mat-label>Informe seu nome</mat-label>
+                    <input required matInput name="name" [(ngModel)]="obj.name">
+                </mat-form-field>
+
+                <mat-form-field class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <mat-label>Informe seu E-mail</mat-label>
+                    <input required matInput name="email" [(ngModel)]="obj.email">
+                </mat-form-field>  
+                
+                <mat-form-field class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <mat-label>Gênero</mat-label>
+                    <input required matInput name="gender" [(ngModel)]="obj.gender">
+                </mat-form-field>  
+
+                <mat-form-field class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <mat-label>Número de Telefone</mat-label>
+                    <input required matInput name="phone" [(ngModel)]="obj.phone">
+                </mat-form-field>  
+            </div>
+        </mat-card-content>
+    </form>
+    <mat-card-actions class="row center-xs">
+        <button (click)="close()" mat-button>Cancelar</button>
+        <button (click)="saveOrUpdate()" [disabled]="!form.form.valid" mat-button>Enviar</button>
+    </mat-card-actions>
+</mat-card>
